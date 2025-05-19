@@ -1,23 +1,31 @@
-# alu_regex-data-extraction-uwenayoallain
+# ALU Regex Data Extraction
 
-## Regex Data Extraction - ALU Assignment
+## Features
+- Fetches sample user data from a public API (Random User API)
+- Extracts:
+  - Email addresses
+  - URLs
+  - Phone numbers
+  - Credit card numbers
+  - Times (12-hour and 24-hour)
+  - HTML tags
+  - Hashtags
+  - Currency amounts
+- Outputs results in a clean, grouped format
 
-This project extracts various types of structured data from text files using Python and Regular Expressions (regex). It is designed to process large volumes of text and identify key data types for aggregation and analysis.
-
-### Data Types Extracted
-- **Email addresses** (e.g., user@example.com, firstname.lastname@company.co.uk)
-- **URLs** (e.g., https://www.example.com, http://test-site.net)
-- **Phone numbers** (formats like (123) 456-7890, 123-456-7890, 123.456.7890)
-- **Credit card numbers** (formats like 1234 5678 9012 3456 or 1234-5678-9012-3456)
-- **Time** (24-hour and 12-hour formats, e.g., 14:30, 2:30 PM)
-- **HTML tags** (e.g., <p>, <div class="example">)
-- **Hashtags** (e.g., #example, #ThisIsAHashtag)
-- **Currency amounts** (e.g., $19.99, $1,234.56)
+## Data Types Extracted
+- **Email addresses** (e.g., user@example.com)
+- **URLs** (e.g., https://www.example.com)
+- **Phone numbers** (e.g., (123) 456-7890)
+- **Credit card numbers** (e.g., 1234 5678 9012 3456)
+- **Times** (e.g., 14:30, 2:30 PM)
+- **HTML tags** (e.g., <div class="example">)
+- **Hashtags** (e.g., #PythonRocks)
+- **Currency amounts** (e.g., $1,234.56)
 
 ## Setup
-
 1. Ensure you have Python 3.x installed.
-2. Install the required package:
+2. Install dependencies:
    ```bash
    pip install requests
    ```
@@ -27,11 +35,18 @@ This project extracts various types of structured data from text files using Pyt
    ```
 
 ## Usage
-- The script fetches data from a public API and generates additional synthetic data.
-- Extracted results are written to `output.txt` in the project directory.
-- No input file is required.
+- The script fetches and generates data, then extracts all supported data types using regex.
+- Results are written to `output.txt` in the project directory.
+- No input file is required(for now).
 
 ## Output
-- Results for each data type are grouped and listed in `output.txt`.
-
+- The output file `output.txt` contains each data type grouped and listed in a readable format, e.g.:
+  ```
+  Emails:
+    user@example.com
+    ...
+  URLs:
+    https://www.example.com
+    ...
+  ...
 ---
